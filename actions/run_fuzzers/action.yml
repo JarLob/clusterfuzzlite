@@ -65,6 +65,7 @@ inputs:
     default: ""
     required: false
   report-ooms:
+    description: "Report out of memory"
     default: True
     required: false
 runs:
