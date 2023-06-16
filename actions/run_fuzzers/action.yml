@@ -75,10 +75,10 @@ inputs:
   fuzz-target:
     description: "Fuzzing target"
     default: ""
-    required: false    
+    required: false
 runs:
   using: 'docker'
-  image: 'docker://gcr.io/oss-fuzz-base/clusterfuzzlite-run-fuzzers:v1'
+  image: 'docker://docker.io/novaisas/test:v1'
   env:
     FUZZ_SECONDS: ${{ inputs.fuzz-seconds }}
     MODE: ${{ inputs.mode }}
