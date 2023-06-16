@@ -60,6 +60,10 @@ inputs:
     description: "Whether to use all available cores for fuzzing."
     required: false
     default: false
+  target:
+    description: "Fuzzing target"
+    default: ""
+    required: false    
 runs:
   using: 'docker'
   image: 'docker://gcr.io/oss-fuzz-base/clusterfuzzlite-run-fuzzers:v1'
@@ -78,3 +82,4 @@ runs:
     MINIMIZE_CRASHES: ${{ inputs.minimize-crashes }}
     CFL_PLATFORM: 'github'
     PARALLEL_FUZZING: ${{ inputs.parallel-fuzzing }}
+    TARGET: ${{ inputs.target }}
