@@ -72,6 +72,10 @@ inputs:
     description: "Whether to report fails due to OOM."
     required: false
     default: true
+  fuzz-target:
+    description: "Fuzzing target"
+    default: ""
+    required: false    
 runs:
   using: 'docker'
   image: 'docker://gcr.io/oss-fuzz-base/clusterfuzzlite-run-fuzzers:v1'
@@ -93,3 +97,4 @@ runs:
     PARALLEL_FUZZING: ${{ inputs.parallel-fuzzing }}
     REPORT_TIMEOUTS: ${{ inputs.report-timeouts }}
     REPORT_OOMS: ${{ inputs.report-ooms}}
+    FUZZ_TARGET: ${{ inputs.fuzz-target }}
