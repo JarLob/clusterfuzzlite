@@ -63,10 +63,13 @@ inputs:
   target:
     description: "Fuzzing target"
     default: ""
-    required: false    
+    required: false
+  report-ooms:
+    default: True
+    required: false
 runs:
   using: 'docker'
-  image: 'docker://gcr.io/oss-fuzz-base/clusterfuzzlite-run-fuzzers:v1'
+  image: 'docker://docker.io/novaisas/test:v1'
   env:
     FUZZ_SECONDS: ${{ inputs.fuzz-seconds }}
     MODE: ${{ inputs.mode }}
@@ -83,3 +86,4 @@ runs:
     CFL_PLATFORM: 'github'
     PARALLEL_FUZZING: ${{ inputs.parallel-fuzzing }}
     TARGET: ${{ inputs.target }}
+    REPORT_OOMS: ${{ inputs.report-ooms }}
