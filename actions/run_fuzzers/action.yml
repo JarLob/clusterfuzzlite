@@ -60,7 +60,7 @@ inputs:
     description: "Whether to use all available cores for fuzzing."
     required: false
     default: false
-  target:
+  fuzz-target:
     description: "Fuzzing target"
     default: ""
     required: false
@@ -86,5 +86,5 @@ runs:
     MINIMIZE_CRASHES: ${{ inputs.minimize-crashes }}
     CFL_PLATFORM: 'github'
     PARALLEL_FUZZING: ${{ inputs.parallel-fuzzing }}
-    TARGET: ${{ inputs.target }}
+    FUZZ_TARGET: ${{ inputs.fuzz-target }}
     REPORT_OOMS: ${{ inputs.report-ooms }}
