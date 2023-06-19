@@ -68,6 +68,10 @@ inputs:
     description: "Report out of memory"
     default: True
     required: false
+  timeout:
+    description: "Fuzz target run timeout in seconds"
+    default: ""
+    required: false
 runs:
   using: 'docker'
   image: 'docker://docker.io/novaisas/test:v1'
@@ -88,3 +92,4 @@ runs:
     PARALLEL_FUZZING: ${{ inputs.parallel-fuzzing }}
     FUZZ_TARGET: ${{ inputs.fuzz-target }}
     REPORT_OOMS: ${{ inputs.report-ooms }}
+    FUZZ_TARGET_TIMEOUT: ${{ inputs.timeout }}
