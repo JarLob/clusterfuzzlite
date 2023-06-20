@@ -68,6 +68,10 @@ inputs:
     description: "Report out of memory"
     default: True
     required: false
+  report-timeouts:
+    description: "Report timeouts"
+    default: False
+    required: false
   timeout:
     description: "Fuzz target run timeout in seconds"
     default: ""
@@ -92,4 +96,5 @@ runs:
     PARALLEL_FUZZING: ${{ inputs.parallel-fuzzing }}
     FUZZ_TARGET: ${{ inputs.fuzz-target }}
     REPORT_OOMS: ${{ inputs.report-ooms }}
+    REPORT_TIMEOUTS: ${{ inputs.report-timeouts }}
     FUZZ_TARGET_TIMEOUT: ${{ inputs.timeout }}
