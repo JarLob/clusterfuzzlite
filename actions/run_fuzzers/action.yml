@@ -76,6 +76,14 @@ inputs:
     description: "Fuzzing target"
     default: ""
     required: false
+  report-leaks:
+    description: "Report leaks"
+    default: False
+    required: false
+  upload-all-crashes:
+    description: "Upload all crashes"
+    default: False
+    required: false
   timeout:
     description: "Fuzz target run timeout in seconds"
     default: ""
@@ -103,3 +111,5 @@ runs:
     REPORT_OOMS: ${{ inputs.report-ooms}}
     FUZZ_TARGET: ${{ inputs.fuzz-target }}
     FUZZ_TARGET_TIMEOUT: ${{ inputs.timeout }}
+    REPORT_LEAKS: ${{ inputs.report-leaks }}
+    UPLOAD_ALL_CRASHES: ${{ inputs.upload-all-crashes}}
