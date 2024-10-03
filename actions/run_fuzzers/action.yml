@@ -92,6 +92,7 @@ runs:
   using: 'docker'
   image: 'docker://docker.io/novaisas/test:v1'
   env:
+    # CIFUZZ_DEBUG: 'True'
     FUZZ_SECONDS: ${{ inputs.fuzz-seconds }}
     MODE: ${{ inputs.mode }}
     LANGUAGE: ${{ inputs.language }}

@@ -55,6 +55,7 @@ runs:
   using: 'docker'
   image: 'docker://gcr.io/oss-fuzz-base/clusterfuzzlite-build-fuzzers:v1'
   env:
+    # CIFUZZ_DEBUG: 'True'
     ALLOWED_BROKEN_TARGETS_PERCENTAGE: ${{ inputs.allowed-broken-targets-percentage}}
     BAD_BUILD_CHECK: ${{ inputs.bad-build-check }}
     UPLOAD_BUILD: ${{ inputs.upload-build }}
